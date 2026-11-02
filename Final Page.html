@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Senior Civil Draughtsman & Quantity Surveyor</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: 'var(--brand-primary, #06b6d4)',
+                            600: '#0891b2',
+                            700: '#0e7490',
+                            dark: 'var(--bg-main, #0f172a)',
+                            gold: 'var(--brand-accent, #f59e0b)',
+                            goldHover: '#d97706'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['var(--custom-font-family, Inter)', 'sans-serif'],
+                        heading: ['var(--custom-heading-font, Space Grotesk)', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style id="dynamic-styles">
+        :root {
+            --brand-primary: #06b6d4;
+            --brand-accent: #f59e0b;
+            --bg-main: #0b1329;
+            --custom-font-family: 'Inter', sans-serif;
+            --custom-heading-font: 'Space Grotesk', sans-serif;
+            --base-font-size: 16px;
+        }
+
+        body {
+            font-family: var(--custom-font-family) !important;
+            font-size: var(--base-font-size);
+            background-color: var(--bg-main);
+            color: #f8fafc;
+        }
+
+        h1, h2, h3, h4, .font-heading {
+            font-family: var(--custom-heading-font) !important;
+        }
+
+        .blueprint-bg {
+            background-color: var(--bg-main);
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 60%),
+                linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%, 25px 25px, 25px 25px;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+        .glass-card:hover {
+            border-color: rgba(245, 158, 11, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.25);
+        }
+
+        .project-card-custom {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card-custom:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+        .card-img-wrap {
+            height: 200px;
+            width: 100%;
+            background-color: #000;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        .card-img-wrap img, .card-img-wrap video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .project-card-custom:hover .card-img-wrap img, 
+        .project-card-custom:hover .card-img-wrap video {
+            transform: scale(1.05);
+        }
+        .card-badges {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            pointer-events: none;
+        }
+        .category-tag {
+            background: rgba(37, 99, 235, 0.85);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+        }
+        .img-badge {
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            backdrop-filter: blur(4px);
+        }
+        .card-body-custom {
+            padding: 1.2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-title-custom {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            color: #fff;
+        }
+        .card-title-custom:hover {
+            color: var(--brand-primary);
+        }
+        .card-desc-custom {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        .card-footer-custom {
+            margin-top: auto;
+            padding-top: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .order-btns {
+            display: flex;
+            gap: 4px;
+        }
+        .icon-btn-custom {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #334155;
+            color: #f8fafc;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+        .icon-btn-custom:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--brand-primary);
+        }
+
+        .filter-section-custom {
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            z-index: 500;
+        }
+        .custom-dropdown {
+            position: relative;
+            display: inline-block;
+            min-width: 240px;
+        }
+        .dropdown-select-btn {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            color: #f8fafc;
+            padding: 0.7rem 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+        .dropdown-select-btn:hover {
+            border-color: var(--brand-primary);
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            width: 100%;
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            overflow: hidden;
+            z-index: 99999;
+            display: none;
+        }
+        .dropdown-menu.active {
+            display: block;
+        }
+        .dropdown-item {
+            padding: 0.85rem 1.2rem;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: #94a3b8;
+            transition: 0.15s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #1e293b;
+            user-select: none;
+        }
+        .dropdown-item:hover {
+            background-color: rgba(37, 99, 235, 0.25);
+            color: #f8fafc;
+        }
+        .dropdown-item.active {
+            color: white;
+            background-color: var(--brand-primary);
+            font-weight: 500;
+        }
+        .dropdown-divider {
+            height: 1px;
+            background-color: #334155;
+            margin: 4px 0;
+        }
+
+        .custom-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .custom-modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .custom-modal-content {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            width: 90%;
+            max-width: 850px;
+            max-height: 90vh;
+            border-radius: 16px;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            color: #f8fafc;
+        }
+        .close-custom-modal {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .close-custom-modal:hover {
+            color: white;
+        }
+        .form-control-custom {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: white;
+            font-size: 0.95rem;
+            margin-top: 5px;
+        }
+        .form-control-custom:focus {
+            outline: none;
+            border-color: var(--brand-primary);
+        }
+        textarea.form-control-custom {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .category-manage-box {
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-top: 8px;
+        }
+        .cat-list-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 6px;
+        }
+        .cat-manage-tag {
+            background: #1e293b;
+            border: 1px solid #334155;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #f8fafc;
+        }
+        .cat-delete-btn {
+            color: #ef4444;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+        .cat-used-text {
+            font-size: 0.7rem;
+            color: #94a3b8;
+            font-style: italic;
+        }
+        .gallery-container {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .main-media-wrapper {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: #000;
+            border-radius: 10px;
+            border: 1px solid #334155;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-gallery-view {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            cursor: zoom-in;
+        }
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            z-index: 5;
+            transition: 0.2s;
+        }
+        .nav-arrow:hover {
+            background: var(--brand-primary);
+            border-color: var(--brand-primary);
+        }
+        .nav-prev { left: 15px; }
+        .nav-next { right: 15px; }
+        .thumbnails-track {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+        .thumb-wrapper {
+            position: relative;
+            flex-shrink: 0;
+        }
+        .thumb-item {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 6px;
+            cursor: pointer;
+            opacity: 0.6;
+            border: 2px solid transparent;
+            transition: 0.2s;
+            background: #000;
+            display: block;
+        }
+        .thumb-item.active, .thumb-item:hover {
+            opacity: 1;
+            border-color: var(--brand-primary);
+        }
+        .delete-media-btn {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: #ef4444;
+            color: white;
+            border: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            font-size: 0.75rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+        .fullscreen-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 300000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .fullscreen-modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .fullscreen-content {
+            max-width: 95vw;
+            max-height: 95vh;
+            object-fit: contain;
+            cursor: grab;
+            transform-origin: center center;
+            transition: transform 0.05s ease-out;
+        }
+        .close-fullscreen {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 300010;
+        }
+        .close-fullscreen:hover {
+            background: #ef4444;
+        }
+
+        /* Floating Font Toolbar for Admin */
+        #font-toolbar {
+            position: absolute;
+            z-index: 200000;
+            display: none;
+            background: #0f172a;
+            border: 1px solid var(--brand-accent);
+            padding: 4px 8px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+            align-items: center;
+            gap: 6px;
+        }
+        #font-toolbar button {
+            background: #1e293b;
+            color: white;
+            border: 1px solid #334155;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #font-toolbar button:hover {
+            background: var(--brand-primary);
+            color: black;
+        }
+        #font-toolbar span {
+            font-size: 0.75rem;
+            color: #f59e0b;
+            font-family: monospace;
+        }
+
+        /* Mode Management classes */
+        .client-mode .admin-only,
+        .client-mode .delete-media-btn,
+        .client-mode .reel-checkbox-wrap {
+            display: none !important;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: var(--brand-primary); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--brand-accent); }
+    </style>
+</head>
+<body class="client-mode text-slate-100 font-sans antialiased blueprint-bg min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-slate-950">
+
+    <!-- FLOATING FONT TOOLBAR (ADMIN ONLY) -->
+    <div id="font-toolbar">
+        <span>Font Size:</span>
+        <button onclick="changeSelectedFontSize(-1)"><i class="fa-solid fa-minus"></i></button>
+        <span id="current-font-display">16px</span>
+        <button onclick="changeSelectedFontSize(1)"><i class="fa-solid fa-plus"></i></button>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/90 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#hero" class="flex items-center space-x-3 group">
+                <div class="w-11 h-11 rounded-xl border-2 border-brand-500 shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform bg-slate-900 flex items-center justify-center flex-shrink-0 text-brand-500 text-xl font-bold">
+                    <i class="fa-solid fa-compass-drafting text-brand-gold"></i>
+                </div>
+                <div>
+                    <span id="display-header-name" class="editable-field font-heading font-bold text-lg text-white block leading-tight tracking-wide">ZAHID MEHMOOD</span>
+                </div>
+            </a>
+
+            <!-- Public Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#hero" class="text-slate-300 hover:text-brand-gold transition-colors">Home</a>
+                <a href="#video-reel" id="nav-video-reel-link" class="text-slate-300 hover:text-brand-gold transition-colors flex items-center gap-1.5"><i class="fa-solid fa-play text-xs text-brand-500"></i> Video Reel</a>
+                <a href="#projects" class="text-slate-300 hover:text-brand-gold transition-colors font-semibold text-brand-500"><i class="fa-solid fa-layer-group text-xs mr-1"></i> Featured Projects</a>
+                <a href="#about" class="text-slate-300 hover:text-brand-gold transition-colors">About Me</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-2">
+                <a href="https://wa.me/923135366962" target="_blank" class="px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-950 bg-emerald-500 hover:bg-emerald-400 rounded-lg shadow transition-all flex items-center gap-1.5">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+                </a>
+                <a href="mailto:zahid-meh@hotmail.com" class="px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-950 bg-brand-gold hover:bg-amber-400 rounded-lg shadow transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-envelope text-sm"></i> Email
+                </a>
+                <!-- Admin Logout Button (Appears only in Admin Mode) -->
+                <button id="adminLogoutHeaderBtn" class="admin-only px-3 py-2 text-xs font-bold uppercase tracking-wider text-red-400 bg-slate-900 border border-red-500/40 hover:bg-red-500 hover:text-white rounded-lg transition-all flex items-center gap-1.5" onclick="handleLogout()">
+                    <i class="fa-solid fa-arrow-right-from-bracket text-xs"></i> Logout Admin
+                </button>
+                <button class="px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-950 bg-brand-500 hover:bg-brand-400 rounded-lg transition-all flex items-center gap-1.5 admin-only" onclick="openAddModal()">
+                    <i class="fa-solid fa-plus text-xs"></i> Add Project
+                </button>
+                <button class="px-3 py-2 text-xs font-bold uppercase tracking-wider text-brand-gold bg-slate-900 border border-brand-gold/40 hover:bg-brand-gold hover:text-slate-950 rounded-lg transition-all flex items-center gap-1.5 admin-only" onclick="exportBackup()" title="Download Backup JSON">
+                    <i class="fa-solid fa-download text-xs"></i> Export Backup
+                </button>
+                <button class="px-3 py-2 text-xs font-bold uppercase tracking-wider text-cyan-400 bg-slate-900 border border-cyan-500/40 hover:bg-cyan-500 hover:text-slate-950 rounded-lg transition-all flex items-center gap-1.5 admin-only" onclick="document.getElementById('importBackupInput').click()" title="Restore Backup">
+                    <i class="fa-solid fa-upload text-xs"></i> Import
+                </button>
+                <input type="file" id="importBackupInput" class="hidden" accept=".json" onchange="importBackup(event)">
+            </div>
+
+            <!-- Mobile Menu Trigger -->
+            <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white p-2 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-6 py-4 space-y-3 text-sm">
+            <a href="#hero" class="mobile-link block text-slate-300 hover:text-brand-gold py-2 border-b border-slate-800">Home</a>
+            <a href="#video-reel" id="mobile-video-reel-link" class="mobile-link block text-brand-500 hover:text-brand-gold py-2 border-b border-slate-800 font-semibold"><i class="fa-solid fa-play text-xs mr-2"></i> Project Video Reel</a>
+            <a href="#projects" class="mobile-link block text-slate-300 hover:text-brand-gold py-2 border-b border-slate-800"><i class="fa-solid fa-layer-group text-xs mr-2"></i> Featured Projects</a>
+            <a href="#about" class="mobile-link block text-slate-300 hover:text-brand-gold py-2 border-b border-slate-800">About Me</a>
+            <div class="flex gap-2 pt-2">
+                <a href="https://wa.me/923135366962" target="_blank" class="flex-1 text-center py-2 bg-emerald-500 text-slate-950 font-bold rounded-lg text-xs uppercase">WhatsApp</a>
+                <a href="mailto:zahid-meh@hotmail.com" class="flex-1 text-center py-2 bg-brand-gold text-slate-950 font-bold rounded-lg text-xs uppercase">Email</a>
+            </div>
+            <button onclick="handleLogout()" class="admin-only w-full text-center py-2 bg-red-900/50 text-red-300 font-bold rounded-lg text-xs uppercase border border-red-500/30">Logout Admin</button>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="hero" class="relative py-10 md:py-16 border-b border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-8 space-y-4 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-brand-500/40 text-brand-500 font-semibold uppercase tracking-wider">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                            <span id="display-top-badge" contenteditable="false" class="editable-field">Senior Civil Engineering Professional</span>
+                        </div>
+
+                        <h1 id="display-main-subtitle" contenteditable="false" class="editable-field font-heading font-extrabold text-brand-gold tracking-tight leading-snug text-3xl sm:text-4xl">
+                            Senior Civil Draughtsman & Quantity Surveyor
+                        </h1>
+
+                        <p id="display-main-bio" contenteditable="false" class="editable-field text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto lg:mx-0">
+                            Professional with 19+ years of expertise—including 11 impactful years in Saudi Arabia and extensive experience with DD&C – GHQ and Design Desk consultancies in Pakistan. Specialized in Building Design (Revit/BIM), Town Planning, and Infrastructure (Roads, Sewerage, Earthwork Quantities). Expert in delivering precision through Revit, AutoCAD, Civil 3D, EWXP and comprehensive Quantity Surveying (QS).
+                        </p>
+
+                        <div class="space-y-3 py-2 max-w-2xl mx-auto lg:mx-0 text-left">
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-500 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <div class="text-sm sm:text-base font-medium text-brand-500">
+                                    <strong class="text-brand-500 font-heading"><span contenteditable="false" class="editable-field" id="label-line-1">Building / Town Planning:</span></strong> <span contenteditable="false" class="editable-field" id="exp-line-1">19+ Years Experience</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-500 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <div class="text-sm sm:text-base font-medium text-brand-500">
+                                    <strong class="text-brand-500 font-heading"><span contenteditable="false" class="editable-field" id="label-line-2">Infrastructure (Road / Sewer):</span></strong> <span contenteditable="false" class="editable-field" id="exp-line-2">11 Years in Saudi Arabia</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-500 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <div class="text-sm sm:text-base font-medium text-brand-500">
+                                    <strong class="text-brand-500 font-heading"><span contenteditable="false" class="editable-field" id="label-line-3">Quantity Survey:</span></strong> <span contenteditable="false" class="editable-field" id="exp-line-3">Using Civil 3D / Revit / EWXP</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Admin Save Changes Button for Profile -->
+                        <div class="admin-only pt-2 flex flex-wrap gap-2">
+                            <button onclick="saveProfileChanges()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg text-xs uppercase tracking-wider shadow">
+                                <i class="fa-solid fa-floppy-disk mr-1"></i> Save Profile / Text Changes
+                            </button>
+                            <button onclick="exportBackup()" class="px-4 py-2 bg-brand-gold hover:bg-amber-400 text-slate-950 font-bold rounded-lg text-xs uppercase tracking-wider shadow">
+                                <i class="fa-solid fa-download mr-1"></i> Export Backup JSON
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-4 flex justify-center lg:justify-end">
+                        <div class="relative w-full max-w-xs">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 via-brand-gold to-emerald-400 rounded-2xl blur opacity-25"></div>
+                            
+                            <div class="relative glass-card rounded-2xl p-3 sm:p-4 text-center space-y-3 border border-slate-700 shadow-xl">
+                                <div class="flex items-center justify-between text-slate-400 font-mono border-b border-slate-800 pb-2">
+                                    <span id="display-card-badge1" contenteditable="false" class="editable-field"><i class="fa-solid fa-microchip text-brand-500"></i> CAD / BIM SPECIALIST</span>
+                                    <span id="display-card-badge2" contenteditable="false" class="editable-field text-brand-gold">DAE CIVIL</span>
+                                </div>
+
+                                <div class="relative w-44 h-56 sm:w-48 sm:h-60 mx-auto rounded-xl overflow-hidden border border-brand-500/80 shadow-lg bg-slate-900 group">
+                                    <img id="hero-profile-img" src="Zahid.jpg" alt="Zahid Mehmood" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://via.placeholder.com/350x450/0f172a/06b6d4?text=Zahid+Mehmood'">
+                                    
+                                    <!-- Profile Image Upload Button (Admin Only) -->
+                                    <div class="admin-only absolute inset-0 bg-slate-950/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer" onclick="document.getElementById('profileImgInput').click()">
+                                        <div class="text-white text-xs font-bold text-center p-2">
+                                            <i class="fa-solid fa-camera text-lg mb-1 block"></i> Change Photo
+                                        </div>
+                                    </div>
+                                    <input type="file" id="profileImgInput" class="hidden" accept="image/*" onchange="handleProfileImageUpload(event)">
+                                </div>
+
+                                <div>
+                                    <h3 id="display-card-name" contenteditable="false" class="editable-field text-lg font-heading font-bold text-white">Zahid Mehmood</h3>
+                                    <p id="display-card-location" contenteditable="false" class="editable-field text-xs text-slate-400">Rawalpindi, Punjab, Pakistan</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Animated Video Reel Section -->
+        <section id="video-reel" class="py-16 border-b border-slate-800/80 bg-slate-950/80 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Admin Video Reel Visibility Settings Bar -->
+                <div class="admin-only bg-slate-900 border border-brand-gold/40 p-3 rounded-xl mb-6 flex flex-wrap items-center justify-between gap-4 text-xs">
+                    <div class="font-bold text-brand-gold flex items-center gap-2">
+                        <i class="fa-solid fa-eye"></i> Video Reel Device Visibility Settings:
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <label class="cursor-pointer flex items-center gap-1.5 text-slate-200">
+                            <input type="checkbox" id="showOnMobile" onchange="updateVideoVisibility()" checked class="accent-brand-500"> Mobile
+                        </label>
+                        <label class="cursor-pointer flex items-center gap-1.5 text-slate-200">
+                            <input type="checkbox" id="showOnTablet" onchange="updateVideoVisibility()" checked class="accent-brand-500"> Tablet
+                        </label>
+                        <label class="cursor-pointer flex items-center gap-1.5 text-slate-200">
+                            <input type="checkbox" id="showOnDesktop" onchange="updateVideoVisibility()" checked class="accent-brand-500"> Desktop
+                        </label>
+                    </div>
+                </div>
+
+                <div id="video-reel-inner-content">
+                    <div class="flex flex-col md:flex-row items-center justify-between mb-8">
+                        <div>
+                            <div class="inline-flex items-center gap-2 text-xs font-semibold text-brand-gold uppercase tracking-widest mb-1">
+                                <i class="fa-solid fa-film"></i> Interactive Visual Showcase
+                            </div>
+                            <h2 class="text-3xl font-heading font-bold text-white editable-field" contenteditable="false">Animated Project Video Reel</h2>
+                        </div>
+
+                        <div class="flex items-center space-x-3 mt-4 md:mt-0">
+                            <button id="reel-prev-btn" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center border border-slate-700 transition-colors">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button id="reel-play-btn" class="px-5 py-2.5 rounded-xl bg-brand-gold hover:bg-amber-400 text-slate-950 font-bold flex items-center gap-2 transition-colors">
+                                <i class="fa-solid fa-pause" id="play-icon"></i> <span id="play-text">Pause Reel</span>
+                            </button>
+                            <button id="reel-next-btn" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center border border-slate-700 transition-colors">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="relative glass-card rounded-2xl overflow-hidden border border-slate-700 shadow-2xl">
+                        <div class="relative aspect-video max-h-[500px] w-full bg-slate-900 flex items-center justify-center overflow-hidden">
+                            <div id="reel-slides-container" class="w-full h-full relative"></div>
+
+                            <div class="absolute top-4 left-4 z-10 bg-slate-950/85 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800 text-xs font-mono text-brand-500 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                                <span id="reel-slide-title">REEL SHOWCASE</span>
+                            </div>
+                        </div>
+
+                        <div class="w-full bg-slate-900 h-1.5 relative overflow-hidden">
+                            <div id="reel-progress" class="h-full bg-gradient-to-r from-brand-500 via-brand-gold to-emerald-400 w-0 transition-all duration-300"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- MERGED FEATURED ENGINEERING PROJECTS GALLERY -->
+        <section id="projects" class="pt-8 pb-12 md:pt-10 md:pb-16 border-b border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-4">
+                    <div class="inline-flex items-center gap-2 text-xs font-semibold text-brand-500 uppercase tracking-widest mb-1">
+                        <i class="fa-solid fa-diagram-project"></i> <span contenteditable="false" class="editable-field" id="projects-tag">Portfolio Showcase</span>
+                    </div>
+                    <h2 id="projects-main-title" contenteditable="false" class="editable-field text-3xl sm:text-4xl font-heading font-bold text-white tracking-tight">Featured Civil & QS Projects</h2>
+                </div>
+
+                <!-- Dropdown Filter Section -->
+                <div class="filter-section-custom">
+                    <span style="font-size: 0.95rem; color: #94a3b8; font-weight: 500;"><i class="fa-solid fa-filter"></i> Category Filter:</span>
+                    <div class="custom-dropdown" id="customDropdown">
+                        <button type="button" class="dropdown-select-btn" id="dropdownBtn">
+                            <span id="selectedDropdownText">All Projects</span>
+                            <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i>
+                        </button>
+                        <div class="dropdown-menu" id="dropdownMenu"></div>
+                    </div>
+                </div>
+
+                <!-- Projects Grid Container -->
+                <div id="projectsGrid" class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;"></div>
+
+            </div>
+        </section>
+
+        <!-- Brief About Section -->
+        <section id="about" class="py-16 md:py-20 border-b border-slate-800/80 bg-slate-950/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="inline-flex items-center gap-2 text-xs font-semibold text-brand-gold uppercase tracking-widest">
+                            <i class="fa-solid fa-user-gear"></i> Professional Profile
+                        </div>
+                        <h2 class="text-3xl font-heading font-bold text-white editable-field" contenteditable="false">About Zahid Mehmood</h2>
+                        <p id="display-about-p1" contenteditable="false" class="editable-field text-slate-300 text-sm leading-relaxed">
+                            Civil Draughtsman and Quantity Surveyor with 19+ years of extensive experience handling major town planning developments in Pakistan and high-volume infrastructure projects across Saudi Arabia.
+                        </p>
+                        <p id="display-about-p2" contenteditable="false" class="editable-field text-slate-300 text-sm leading-relaxed">
+                            Adept at taking surveyor data to design precise road profiles, parking, sewer networks, and executing Cut & Fill volume calculations using EWXP Earthwork & AutoCAD Civil 3D for Ministry of Transport (MOT) approvals.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-7 space-y-4">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-heading font-bold text-white editable-field" contenteditable="false"><i class="fa-solid fa-briefcase text-brand-gold mr-2"></i> Career Highlights</h3>
+                            <button onclick="addCareerItem()" class="admin-only px-3 py-1 bg-brand-500 text-slate-950 text-xs font-bold rounded hover:bg-brand-400 transition-colors">
+                                <i class="fa-solid fa-plus mr-1"></i> Add Career
+                            </button>
+                        </div>
+                        
+                        <div id="career-highlights-container" class="space-y-4">
+                            <!-- Rendered Dynamically -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal 1: Add / Edit Project Form -->
+    <div class="custom-modal" id="formModal">
+        <div class="custom-modal-content">
+            <button class="close-custom-modal" onclick="closeModal('formModal')">&times;</button>
+            <h2 style="margin-bottom: 1.5rem; font-size: 1.3rem;" id="modalTitle">Naya Project Add Karein</h2>
+            
+            <form id="projectForm" onsubmit="handleFormSubmit(event)">
+                <input type="hidden" id="editIndex" value="-1">
+                
+                <div style="margin-bottom: 1.2rem;">
+                    <label style="display:block; margin-bottom:0.5rem; font-size:0.9rem; color:#94a3b8;">Project Title</label>
+                    <input type="text" id="projectTitle" class="form-control-custom" placeholder="e.g., Highway Road Design & Survey" required>
+                </div>
+
+                <div style="margin-bottom: 1.2rem;">
+                    <label style="display:block; margin-bottom:0.5rem; font-size:0.9rem; color:#94a3b8;">Category Select Karein ya Nayi Category Add Karein</label>
+                    <div style="display: flex; gap: 10px;">
+                        <select id="projectCategory" class="form-control-custom" required style="flex-grow:1; margin-top:0;"></select>
+                        <button type="button" class="px-4 py-2 bg-slate-800 border border-slate-700 text-white rounded-lg cursor-pointer" style="margin-top:0;" onclick="addNewCategoryPrompt()"><i class="fa-solid fa-plus"></i> New</button>
+                    </div>
+
+                    <div class="category-manage-box">
+                        <small style="color: #94a3b8; display:block; font-weight: 500;">
+                            <i class="fa-solid fa-folder-gear"></i> Manage / Delete Unused Categories:
+                        </small>
+                        <div class="cat-list-tags" id="catManageList"></div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1.2rem;">
+                    <label style="display:block; margin-bottom:0.5rem; font-size:0.9rem; color:#94a3b8;">Description</label>
+                    <textarea id="projectDesc" class="form-control-custom" placeholder="Project ki mukammal tafseel yahan likhein..." required></textarea>
+                </div>
+
+                <div style="margin-bottom: 1.2rem;">
+                    <label style="display:block; margin-bottom:0.5rem; font-size:0.9rem; color:#94a3b8;">Upload New Pictures & Videos (Multiple Select)</label>
+                    <input type="file" id="projectMediaFiles" class="form-control-custom" accept="image/*,video/*" multiple style="padding: 0.5rem;">
+                </div>
+
+                <!-- Existing Media Checkboxes for Video Reel (Edit Mode) -->
+                <div id="existingMediaEditSection" style="margin-bottom: 1.2rem; display: none;">
+                    <label style="display:block; margin-bottom:0.5rem; font-size:0.9rem; color:#f59e0b; font-weight:600;">
+                        <i class="fa-solid fa-film"></i> Existing Media & Video Reel Checkboxes:
+                    </label>
+                    <div id="existingMediaCheckboxesContainer" style="display: flex; flex-direction: column; gap: 8px; background: rgba(0,0,0,0.25); padding: 10px; border-radius: 8px; border: 1px solid #334155;"></div>
+                </div>
+
+                <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 2rem;">
+                    <button type="button" class="px-4 py-2 bg-slate-800 border border-slate-700 text-white rounded-lg cursor-pointer" onclick="closeModal('formModal')">Cancel</button>
+                    <button type="submit" class="px-5 py-2 bg-brand-500 text-slate-950 font-bold rounded-lg cursor-pointer"><i class="fa-solid fa-save"></i> Save Project</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal 2: View Project Details & Gallery Window -->
+    <div class="custom-modal" id="viewModal">
+        <div class="custom-modal-content">
+            <button class="close-custom-modal" onclick="closeModal('viewModal')">&times;</button>
+            
+            <input type="hidden" id="currentViewProjectIndex" value="-1">
+            <div class="gallery-container">
+                <div class="main-media-wrapper">
+                    <button class="nav-arrow nav-prev" onclick="changeMedia(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div id="mainMediaContainer" style="width:100%; height:100%; display:flex; align-items:center; justify-content:center;"></div>
+                    <button class="nav-arrow nav-next" onclick="changeMedia(1)"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="thumbnails-track" id="thumbnailsTrack"></div>
+            </div>
+
+            <div id="viewCategoryBadge" style="display:inline-block; background:var(--brand-primary); color:#000; padding:4px 10px; border-radius:6px; font-size:0.8rem; font-weight:600; margin-bottom:0.5rem;"></div>
+            <h2 id="viewTitle" style="margin-bottom: 0.8rem; font-size: 1.6rem;"></h2>
+            <p id="viewDesc" style="color: #94a3b8; line-height: 1.7; white-space: pre-line;"></p>
+        </div>
+    </div>
+
+    <!-- Modal 3: Fullscreen Zoom Popup Modal -->
+    <div class="fullscreen-modal" id="fullscreenModal">
+        <button class="close-fullscreen" onclick="closeFullscreen()">&times;</button>
+        <div id="fullscreenContainer" style="display:flex; align-items:center; justify-content:center; width:100%; height:100%; overflow:hidden;"></div>
+    </div>
+
+    <!-- CLEAN FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-6 text-slate-400 text-xs text-center">
+        <p>&copy; <span id="year"></span> Zahid Mehmood</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        let categories = JSON.parse(localStorage.getItem('my_portfolio_categories')) || [
+            "Road Design", 
+            "Building & Structural", 
+            "Town Planning", 
+            "Quantity Surveying", 
+            "Sewerage Network"
+        ];
+
+        let projects = JSON.parse(localStorage.getItem('my_portfolio_projects')) || [
+            {
+                title: "Taj Residencia Town Planning Design",
+                category: "Town Planning",
+                description: "Worked with former Director Mr. Javid Iqbal Awan on complete sector layout, road networks, plotting grids, and infrastructure design for Taj Residencia (DHA Islamabad).",
+                media: [{ data: "https://placehold.co/800x500/0f172a/06b6d4?text=Taj+Residencia+Town+Planning+Blueprint", type: "image/jpeg", inReel: true }]
+            },
+            {
+                title: "Saudi Arabia MoT Roads & EWXP Earthwork Infrastructure",
+                category: "Road Design",
+                description: "11 years at Homoud AL Aied Co. (KSA). Integrated road design, parking structures, and sewer networks with EWXP Earthwork Cut & Fill volume calculations and official BOQ sheets for Ministry of Transport (MOT) & Municipalities approvals.",
+                media: [{ data: "https://placehold.co/800x500/0f172a/f59e0b?text=KSA+MoT+Roads+%2B+EWXP+Earthwork+Sheets", type: "image/jpeg", inReel: true }]
+            }
+        ];
+        
+        let isAdminLoggedIn = false;
+        let currentActiveMediaIndex = 0;
+        let currentOpenProjectIndex = -1;
+        let activeCategoryFilter = "All";
+        let activeEditableTarget = null;
+
+        // Video Reel Automation Engine
+        let currentReelIndex = 0;
+        let reelTimer = null;
+        let isReelPaused = false;
+
+        let scale = 1;
+        let panning = false;
+        let pointX = 0;
+        let pointY = 0;
+        let startX = 0;
+        let startY = 0;
+
+        // Check secret URL query parameter for admin login (?admin=true)
+        function checkSecretUrlLogin() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('admin') === 'true') {
+                const user = prompt("Enter Admin Username:");
+                const pass = prompt("Enter Admin Password:");
+                if (user === "zahid_admin" && pass === "Zahid_QS_2026!#") {
+                    isAdminLoggedIn = true;
+                    document.body.classList.remove('client-mode');
+                    document.querySelectorAll('.editable-field').forEach(el => el.setAttribute('contenteditable', 'true'));
+                    attachEditableClickHandlers();
+                    alert("Successfully logged in via secret admin link!");
+                } else {
+                    alert("Invalid Credentials!");
+                }
+            }
+        }
+
+        function saveStorage() {
+            localStorage.setItem('my_portfolio_projects', JSON.stringify(projects));
+            localStorage.setItem('my_portfolio_categories', JSON.stringify(categories));
+            renderDashboard();
+            initVideoReel();
+        }
+
+        function renderDashboard() {
+            renderDropdownFilter();
+            renderCategorySelectOptions();
+            renderProjects();
+            loadSavedProfile();
+        }
+
+        // Dropdown Toggle Setup
+        const dropdownBtn = document.getElementById('dropdownBtn');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        dropdownBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!document.getElementById('customDropdown').contains(e.target)) {
+                dropdownMenu.classList.remove('active');
+            }
+            if (isAdminLoggedIn && !e.target.closest('#font-toolbar') && !e.target.classList.contains('editable-field')) {
+                document.getElementById('font-toolbar').style.display = 'none';
+            }
+        });
+
+        function filterProjects(categoryName) {
+            activeCategoryFilter = categoryName;
+            dropdownMenu.classList.remove('active');
+            renderDashboard();
+        }
+
+        function renderDropdownFilter() {
+            const selectedText = document.getElementById('selectedDropdownText');
+            selectedText.innerText = activeCategoryFilter === "All" ? "All Projects" : activeCategoryFilter;
+
+            dropdownMenu.innerHTML = '';
+            
+            const allItem = document.createElement('div');
+            allItem.className = `dropdown-item ${activeCategoryFilter === 'All' ? 'active' : ''}`;
+            allItem.innerHTML = `<i class="fa-solid fa-layer-group"></i> All Projects`;
+            allItem.setAttribute('onclick', "filterProjects('All')");
+            dropdownMenu.appendChild(allItem);
+
+            dropdownMenu.innerHTML += `<div class="dropdown-divider"></div>`;
+
+            categories.forEach(cat => {
+                const item = document.createElement('div');
+                item.className = `dropdown-item ${activeCategoryFilter === cat ? 'active' : ''}`;
+                item.innerHTML = `<i class="fa-solid fa-folder"></i> ${cat}`;
+                item.setAttribute('onclick', `filterProjects('${cat}')`);
+                dropdownMenu.appendChild(item);
+            });
+        }
+
+        function addNewCategoryPrompt() {
+            const newCat = prompt("Nayi category ka naam likhein (e.g., Bridge Design, MEP Works):");
+            if (newCat && newCat.trim() !== "") {
+                const trimmed = newCat.trim();
+                if (!categories.includes(trimmed)) {
+                    categories.push(trimmed);
+                    saveStorage();
+                    renderCategorySelectOptions();
+                    document.getElementById('projectCategory').value = trimmed;
+                } else {
+                    alert("Ye category pehle se mojood hai!");
+                }
+            }
+        }
+
+        function deleteCategory(catName) {
+            const hasProjects = projects.some(p => p.category === catName);
+            if (hasProjects) {
+                alert(`Is category (${catName}) mein pehle se projects mojood hain. Aap sirf khaali categories delete kar sakte hain!`);
+                return;
+            }
+
+            if (confirm(`Kya aap waqai "${catName}" category ko delete karna chahte hain?`)) {
+                categories = categories.filter(c => c !== catName);
+                if (activeCategoryFilter === catName) {
+                    activeCategoryFilter = "All";
+                }
+                saveStorage();
+                renderCategorySelectOptions();
+            }
+        }
+
+        function renderCategorySelectOptions() {
+            const select = document.getElementById('projectCategory');
+            const manageList = document.getElementById('catManageList');
+            
+            if (!select || !manageList) return;
+            select.innerHTML = '';
+            manageList.innerHTML = '';
+
+            categories.forEach(cat => {
+                const opt = document.createElement('option');
+                opt.value = cat;
+                opt.innerText = cat;
+                select.appendChild(opt);
+
+                const isUsed = projects.some(p => p.category === cat);
+                const tag = document.createElement('span');
+                tag.className = 'cat-manage-tag';
+                
+                if (isUsed) {
+                    tag.innerHTML = `<span>${cat}</span> <span class="cat-used-text">(Used)</span>`;
+                } else {
+                    tag.innerHTML = `<span>${cat}</span> <i class="fa-solid fa-xmark cat-delete-btn" onclick="deleteCategory('${cat}')" title="Delete Unused Category"></i>`;
+                }
+                manageList.appendChild(tag);
+            });
+        }
+
+        function renderProjects() {
+            const grid = document.getElementById('projectsGrid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            const filteredProjects = activeCategoryFilter === "All" 
+                ? projects 
+                : projects.filter(p => (p.category || "General") === activeCategoryFilter);
+
+            if (filteredProjects.length === 0) {
+                grid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #94a3b8; font-size: 1.1rem; padding: 2rem;">No projects found in this category.</p>`;
+                return;
+            }
+
+            filteredProjects.forEach((proj) => {
+                const realIndex = projects.indexOf(proj);
+                const firstMedia = proj.media && proj.media.length > 0 ? proj.media[0] : null;
+                let mediaElement = '';
+
+                if (firstMedia) {
+                    if (firstMedia.type && firstMedia.type.startsWith('video')) {
+                        mediaElement = `<video src="${firstMedia.data}" muted></video>`;
+                    } else {
+                        mediaElement = `<img src="${firstMedia.data}" alt="${proj.title}">`;
+                    }
+                } else {
+                    mediaElement = `<img src="https://via.placeholder.com/400x250?text=No+Media" alt="Placeholder">`;
+                }
+
+                const card = document.createElement('div');
+                card.className = 'project-card-custom';
+                card.innerHTML = `
+                    <div class="card-img-wrap" onclick="openViewModal(${realIndex})">
+                        ${mediaElement}
+                        <div class="card-badges">
+                            <span class="category-tag">${proj.category || 'General'}</span>
+                            <span class="img-badge"><i class="fa-solid fa-photo-film"></i> ${proj.media ? proj.media.length : 0}</span>
+                        </div>
+                    </div>
+                    <div class="card-body-custom">
+                        <h3 class="card-title-custom editable-field" onclick="openViewModal(${realIndex})">${proj.title}</h3>
+                        <p class="card-desc-custom editable-field">${proj.description}</p>
+                        
+                        <div class="card-footer-custom">
+                            <div class="order-btns">
+                                <button class="icon-btn-custom admin-only" onclick="moveProject(${realIndex}, -1)" title="Move Up"><i class="fa-solid fa-arrow-up"></i></button>
+                                <button class="icon-btn-custom admin-only" onclick="moveProject(${realIndex}, 1)" title="Move Down"><i class="fa-solid fa-arrow-down"></i></button>
+                            </div>
+                            <div>
+                                <button class="icon-btn-custom admin-only" onclick="openEditModal(${realIndex})" title="Edit" style="display:inline-flex;"><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="icon-btn-custom admin-only" onclick="deleteProject(${realIndex})" title="Delete" style="color: #ef4444; display:inline-flex; margin-left:4px;"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+            attachEditableClickHandlers();
+        }
+
+        function openAddModal() {
+            document.getElementById('editIndex').value = "-1";
+            document.getElementById('projectForm').reset();
+            renderCategorySelectOptions();
+            document.getElementById('existingMediaEditSection').style.display = 'none';
+            document.getElementById('modalTitle').innerText = "Naya Project Add Karein";
+            openModal('formModal');
+        }
+
+        function openEditModal(index) {
+            const proj = projects[index];
+            document.getElementById('editIndex').value = index;
+            document.getElementById('projectTitle').value = proj.title;
+            renderCategorySelectOptions();
+            document.getElementById('projectCategory').value = proj.category || categories[0];
+            document.getElementById('projectDesc').value = proj.description;
+            document.getElementById('projectMediaFiles').value = ""; 
+
+            const existingSec = document.getElementById('existingMediaEditSection');
+            const container = document.getElementById('existingMediaCheckboxesContainer');
+            container.innerHTML = '';
+
+            if (proj.media && proj.media.length > 0) {
+                existingSec.style.display = 'block';
+                proj.media.forEach((m, mIdx) => {
+                    const row = document.createElement('label');
+                    row.className = 'flex items-center gap-3 cursor-pointer text-xs text-slate-300 bg-slate-900 p-2 rounded border border-slate-800';
+                    row.innerHTML = `
+                        <input type="checkbox" class="existing-reel-chk accent-brand-500 w-4 h-4" data-media-idx="${mIdx}" ${m.inReel ? 'checked' : ''}>
+                        <span class="truncate flex-grow">Media #${mIdx + 1} (${m.type && m.type.startsWith('video') ? 'Video' : 'Image'})</span>
+                    `;
+                    container.appendChild(row);
+                });
+            } else {
+                existingSec.style.display = 'none';
+            }
+
+            document.getElementById('modalTitle').innerText = "Project Edit Karein";
+            openModal('formModal');
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const index = parseInt(document.getElementById('editIndex').value);
+            const title = document.getElementById('projectTitle').value;
+            const category = document.getElementById('projectCategory').value;
+            const description = document.getElementById('projectDesc').value;
+            const fileInput = document.getElementById('projectMediaFiles');
+
+            let existingMedia = [];
+            if (index !== -1 && projects[index].media) {
+                existingMedia = [...projects[index].media];
+                const checkboxes = document.querySelectorAll('.existing-reel-chk');
+                checkboxes.forEach(chk => {
+                    const mIdx = parseInt(chk.getAttribute('data-media-idx'));
+                    if (existingMedia[mIdx]) {
+                        existingMedia[mIdx].inReel = chk.checked;
+                    }
+                });
+            }
+
+            const processFilesAndSave = (mediaList = []) => {
+                const files = fileInput.files;
+                if (files.length === 0) {
+                    finishSave(mediaList);
+                    return;
+                }
+
+                let loadedFilesCount = 0;
+                const newMediaList = [...mediaList];
+
+                Array.from(files).forEach(file => {
+                    const reader = new FileReader();
+                    reader.onload = function(uploadEvent) {
+                        newMediaList.push({
+                            data: uploadEvent.target.result,
+                            type: file.type,
+                            inReel: true 
+                        });
+                        loadedFilesCount++;
+                        if (loadedFilesCount === files.length) {
+                            finishSave(newMediaList);
+                        }
+                    };
+                    reader.readAsDataURL(file);
+                });
+            };
+
+            const finishSave = (mediaList) => {
+                const newProject = { title, category, description, media: mediaList };
+                if (index === -1) {
+                    projects.unshift(newProject);
+                } else {
+                    projects[index] = newProject;
+                }
+                saveStorage();
+                closeModal('formModal');
+            };
+
+            processFilesAndSave(existingMedia);
+        }
+
+        function deleteProject(index) {
+            if (confirm("Kya aap waqai is project ko delete karna chahte hain?")) {
+                projects.splice(index, 1);
+                saveStorage();
+            }
+        }
+
+        function deleteMediaItem(projIndex, mediaIndex, event) {
+            event.stopPropagation();
+            if (confirm("Kya aap is specific picture/video ko delete karna chahte hain?")) {
+                projects[projIndex].media.splice(mediaIndex, 1);
+                saveStorage();
+                if (projects[projIndex].media.length === 0) {
+                    closeModal('viewModal');
+                } else {
+                    openViewModal(projIndex);
+                }
+            }
+        }
+
+        function moveProject(index, direction) {
+            const targetIndex = index + direction;
+            if (targetIndex < 0 || targetIndex >= projects.length) return;
+            const temp = projects[index];
+            projects[index] = projects[targetIndex];
+            projects[targetIndex] = temp;
+            saveStorage();
+        }
+
+        function openViewModal(index) {
+            currentOpenProjectIndex = index;
+            currentActiveMediaIndex = 0;
+            renderActiveMedia();
+            openModal('viewModal');
+        }
+
+        function renderActiveMedia() {
+            const proj = projects[currentOpenProjectIndex];
+            if (!proj) return;
+
+            document.getElementById('viewTitle').innerText = proj.title;
+            document.getElementById('viewCategoryBadge').innerText = proj.category || 'General';
+            document.getElementById('viewDesc').innerText = proj.description;
+            
+            const mainContainer = document.getElementById('mainMediaContainer');
+            const thumbsTrack = document.getElementById('thumbnailsTrack');
+            
+            mainContainer.innerHTML = '';
+            thumbsTrack.innerHTML = '';
+            
+            if (proj.media && proj.media.length > 0) {
+                if (currentActiveMediaIndex >= proj.media.length) currentActiveMediaIndex = 0;
+                if (currentActiveMediaIndex < 0) currentActiveMediaIndex = proj.media.length - 1;
+
+                const mediaObj = proj.media[currentActiveMediaIndex];
+
+                if (mediaObj.type && mediaObj.type.startsWith('video')) {
+                    const vid = document.createElement('video');
+                    vid.src = mediaObj.data;
+                    vid.controls = true;
+                    vid.className = 'main-gallery-view';
+                    vid.ondblclick = () => openFullscreen(mediaObj);
+                    mainContainer.appendChild(vid);
+                } else {
+                    const img = document.createElement('img');
+                    img.src = mediaObj.data;
+                    img.className = 'main-gallery-view';
+                    img.title = "Double-click karein full screen zoom ke liye";
+                    img.ondblclick = () => openFullscreen(mediaObj);
+                    mainContainer.appendChild(img);
+                }
+
+                proj.media.forEach((mObj, idx) => {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'thumb-wrapper';
+
+                    let thumb;
+                    if (mObj.type && mObj.type.startsWith('video')) {
+                        thumb = document.createElement('video');
+                        thumb.src = mObj.data;
+                    } else {
+                        thumb = document.createElement('img');
+                        thumb.src = mObj.data;
+                    }
+                    
+                    thumb.className = `thumb-item ${idx === currentActiveMediaIndex ? 'active' : ''}`;
+                    thumb.onclick = () => {
+                        currentActiveMediaIndex = idx;
+                        renderActiveMedia();
+                    };
+
+                    const delBtn = document.createElement('button');
+                    delBtn.className = 'delete-media-btn admin-only';
+                    delBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                    delBtn.title = "Delete this media";
+                    delBtn.onclick = (e) => deleteMediaItem(currentOpenProjectIndex, idx, e);
+
+                    wrapper.appendChild(thumb);
+                    wrapper.appendChild(delBtn);
+                    thumbsTrack.appendChild(wrapper);
+                });
+            } else {
+                mainContainer.innerHTML = `<img src="https://via.placeholder.com/800x400?text=No+Media+Available" class="main-gallery-view">`;
+            }
+        }
+
+        function changeMedia(direction) {
+            const proj = projects[currentOpenProjectIndex];
+            if (!proj || !proj.media || proj.media.length === 0) return;
+            currentActiveMediaIndex += direction;
+            if (currentActiveMediaIndex >= proj.media.length) {
+                currentActiveMediaIndex = 0;
+            } else if (currentActiveMediaIndex < 0) {
+                currentActiveMediaIndex = proj.media.length - 1;
+            }
+            renderActiveMedia();
+        }
+
+        function openFullscreen(mediaObj) {
+            const fsModal = document.getElementById('fullscreenModal');
+            const fsContainer = document.getElementById('fullscreenContainer');
+            fsContainer.innerHTML = '';
+
+            scale = 1;
+            pointX = 0;
+            pointY = 0;
+
+            if (mediaObj.type && mediaObj.type.startsWith('video')) {
+                const vid = document.createElement('video');
+                vid.src = mediaObj.data;
+                vid.controls = true;
+                vid.autoplay = true;
+                vid.className = 'fullscreen-content';
+                fsContainer.appendChild(vid);
+            } else {
+                const img = document.createElement('img');
+                img.src = mediaObj.data;
+                img.className = 'fullscreen-content';
+                
+                img.onwheel = function(e) {
+                    e.preventDefault();
+                    const zoomIntensity = 0.1;
+                    if (e.deltaY < 0) {
+                        scale += zoomIntensity;
+                    } else {
+                        scale -= zoomIntensity;
+                        if (scale < 1) scale = 1;
+                    }
+                    updateTransform(img);
+                };
+
+                img.onmousedown = function(e) {
+                    e.preventDefault();
+                    startX = e.clientX - pointX;
+                    startY = e.clientY - pointY;
+                    panning = true;
+                };
+
+                window.onmousemove = function(e) {
+                    if (!panning) return;
+                    pointX = e.clientX - startX;
+                    pointY = e.clientY - startY;
+                    updateTransform(img);
+                };
+
+                window.onmouseup = function() {
+                    panning = false;
+                };
+
+                fsContainer.appendChild(img);
+            }
+
+            fsModal.classList.add('active');
+        }
+
+        function updateTransform(img) {
+            img.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+        }
+
+        function closeFullscreen() {
+            document.getElementById('fullscreenModal').classList.remove('active');
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeFullscreen();
+                closeModal('viewModal');
+                closeModal('formModal');
+                dropdownMenu.classList.remove('active');
+            }
+        });
+
+        // Backup Export / Import Functions
+        function exportBackup() {
+            const backupData = {
+                profile: localStorage.getItem('zahid_profile_data'),
+                fonts: localStorage.getItem('zahid_font_sizes'),
+                visibility: localStorage.getItem('zahid_video_visibility'),
+                img: localStorage.getItem('zahid_profile_img'),
+                categories: localStorage.getItem('my_portfolio_categories'),
+                projects: localStorage.getItem('my_portfolio_projects'),
+                career: localStorage.getItem('zahid_career_highlights')
+            };
+
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(backupData, null, 2));
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", "zahid_portfolio_backup_" + new Date().toISOString().slice(0,10) + ".json");
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            downloadAnchor.remove();
+        }
+
+        function importBackup(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const backupData = JSON.parse(e.target.result);
+                    if(backupData.profile) localStorage.setItem('zahid_profile_data', backupData.profile);
+                    if(backupData.fonts) localStorage.setItem('zahid_font_sizes', backupData.fonts);
+                    if(backupData.visibility) localStorage.setItem('zahid_video_visibility', backupData.visibility);
+                    if(backupData.img) localStorage.setItem('zahid_profile_img', backupData.img);
+                    if(backupData.categories) localStorage.setItem('my_portfolio_categories', backupData.categories);
+                    if(backupData.projects) localStorage.setItem('my_portfolio_projects', backupData.projects);
+                    if(backupData.career) localStorage.setItem('zahid_career_highlights', backupData.career);
+                    
+                    alert("Backup imported successfully! Page is reloading...");
+                    location.reload();
+                } catch(err) {
+                    alert("Invalid backup file format!");
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // Dynamic Video Reel Engine
+        function getReelSlides() {
+            let slides = [];
+            projects.forEach(p => {
+                if (p.media) {
+                    p.media.forEach(m => {
+                        if (m.inReel) {
+                            slides.push({
+                                data: m.data,
+                                type: m.type
+                            });
+                        }
+                    });
+                }
+            });
+            return slides;
+        }
+
+        function initVideoReel() {
+            const slides = getReelSlides();
+            const container = document.getElementById('reel-slides-container');
+            if (!container) return;
+            container.innerHTML = '';
+
+            if (slides.length === 0) {
+                container.innerHTML = `<div class="w-full h-full flex items-center justify-center text-slate-400 text-sm">No pictures checked for Video Reel yet. Edit projects and check 'Add to Video Reel'!</div>`;
+                return;
+            }
+
+            slides.forEach((s, idx) => {
+                const slideDiv = document.createElement('div');
+                slideDiv.className = `absolute inset-0 transition-opacity duration-700 ease-in-out ${idx === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`;
+                slideDiv.id = `reel-slide-${idx}`;
+
+                if (s.type && s.type.startsWith('video')) {
+                    slideDiv.innerHTML = `<video src="${s.data}" class="w-full h-full object-cover" autoplay muted loop></video>`;
+                } else {
+                    slideDiv.innerHTML = `<img src="${s.data}" class="w-full h-full object-cover">`;
+                }
+                container.appendChild(slideDiv);
+            });
+
+            currentReelIndex = 0;
+            updateReelInfo();
+            startReelTimer();
+        }
+
+        function updateReelInfo() {
+            const slides = getReelSlides();
+            if (slides.length === 0) return;
+            if (currentReelIndex >= slides.length) currentReelIndex = 0;
+            if (currentReelIndex < 0) currentReelIndex = slides.length - 1;
+
+            slides.forEach((s, idx) => {
+                const el = document.getElementById(`reel-slide-${idx}`);
+                if (el) {
+                    if (idx === currentReelIndex) {
+                        el.classList.remove('opacity-0', 'z-0');
+                        el.classList.add('opacity-100', 'z-10');
+                    } else {
+                        el.classList.remove('opacity-100', 'z-10');
+                        el.classList.add('opacity-0', 'z-0');
+                    }
+                }
+            });
+
+            document.getElementById('reel-slide-title').innerText = `REEL SHOWCASE (${currentReelIndex + 1}/${slides.length})`;
+        }
+
+        function startReelTimer() {
+            clearInterval(reelTimer);
+            if (isReelPaused) return;
+            
+            const slides = getReelSlides();
+            if (slides.length <= 1) return;
+
+            const progressBar = document.getElementById('reel-progress');
+            let progress = 0;
+            const intervalTime = 40; 
+            const step = 100 / (4000 / intervalTime);
+
+            progressBar.style.width = '0%';
+
+            reelTimer = setInterval(() => {
+                if (!isReelPaused) {
+                    progress += step;
+                    progressBar.style.width = progress + '%';
+                    if (progress >= 100) {
+                        progress = 0;
+                        currentReelIndex++;
+                        if (currentReelIndex >= slides.length) currentReelIndex = 0;
+                        updateReelInfo();
+                    }
+                }
+            }, intervalTime);
+        }
+
+        document.getElementById('reel-prev-btn').addEventListener('click', () => {
+            const slides = getReelSlides();
+            if (slides.length === 0) return;
+            currentReelIndex--;
+            updateReelInfo();
+            startReelTimer();
+        });
+
+        document.getElementById('reel-next-btn').addEventListener('click', () => {
+            const slides = getReelSlides();
+            if (slides.length === 0) return;
+            currentReelIndex++;
+            updateReelInfo();
+            startReelTimer();
+        });
+
+        document.getElementById('reel-play-btn').addEventListener('click', () => {
+            isReelPaused = !isReelPaused;
+            const icon = document.getElementById('play-icon');
+            const text = document.getElementById('play-text');
+            if (isReelPaused) {
+                icon.className = "fa-solid fa-play";
+                text.innerText = "Resume Reel";
+                clearInterval(reelTimer);
+            } else {
+                icon.className = "fa-solid fa-pause";
+                text.innerText = "Pause Reel";
+                startReelTimer();
+            }
+        });
+
+        // Dynamic Element-Level Font Toolbar Setup
+        function attachEditableClickHandlers() {
+            document.querySelectorAll('.editable-field').forEach(el => {
+                el.addEventListener('click', function(e) {
+                    if (!isAdminLoggedIn) return;
+                    e.stopPropagation();
+                    activeEditableTarget = this;
+                    
+                    const rect = this.getBoundingClientRect();
+                    const toolbar = document.getElementById('font-toolbar');
+                    
+                    toolbar.style.top = (window.scrollY + rect.top - 40) + 'px';
+                    toolbar.style.left = (window.scrollX + rect.left) + 'px';
+                    toolbar.style.display = 'flex';
+
+                    const currentSize = window.getComputedStyle(this).fontSize;
+                    document.getElementById('current-font-display').innerText = currentSize;
+                });
+            });
+        }
+
+        function changeSelectedFontSize(delta) {
+            if (!activeEditableTarget) return;
+            const currentComputed = window.getComputedStyle(activeEditableTarget).fontSize;
+            let currentSize = parseFloat(currentComputed);
+            let newSize = currentSize + delta;
+            if (newSize < 10) newSize = 10;
+            if (newSize > 60) newSize = 60;
+
+            activeEditableTarget.style.fontSize = newSize + 'px';
+            document.getElementById('current-font-display').innerText = newSize + 'px';
+        }
+
+        function handleLogout() {
+            isAdminLoggedIn = false;
+            document.body.classList.add('client-mode');
+            document.getElementById('font-toolbar').style.display = 'none';
+            document.querySelectorAll('.editable-field').forEach(el => el.setAttribute('contenteditable', 'false'));
+            // Clean URL query parameter
+            window.history.replaceState({}, document.title, window.location.pathname);
+            alert("Logged out successfully! Switched to normal public view.");
+        }
+
+        function updateVideoVisibility() {
+            const showMob = document.getElementById('showOnMobile').checked;
+            const showTab = document.getElementById('showOnTablet').checked;
+            const showDesk = document.getElementById('showOnDesktop').checked;
+            
+            const reelSec = document.getElementById('video-reel');
+            const width = window.innerWidth;
+            let isCurrentDeviceVisible = true;
+            if (width < 768) {
+                isCurrentDeviceVisible = showMob;
+            } else if (width >= 768 && width < 1024) {
+                isCurrentDeviceVisible = showTab;
+            } else {
+                isCurrentDeviceVisible = showDesk;
+            }
+
+            if (isCurrentDeviceVisible) {
+                reelSec.style.display = 'block';
+            } else {
+                reelSec.style.display = 'none';
+            }
+
+            const isAllHidden = !showMob && !showTab && !showDesk;
+            const navLink = document.getElementById('nav-video-reel-link');
+            const mobileLink = document.getElementById('mobile-video-reel-link');
+
+            if (isAllHidden || !isCurrentDeviceVisible) {
+                if(navLink) navLink.style.display = 'none';
+                if(mobileLink) mobileLink.style.display = 'none';
+            } else {
+                if(navLink) navLink.style.display = 'flex';
+                if(mobileLink) mobileLink.style.display = 'block';
+            }
+
+            const visSettings = { mobile: showMob, tablet: showTab, desktop: showDesk };
+            localStorage.setItem('zahid_video_visibility', JSON.stringify(visSettings));
+        }
+
+        window.addEventListener('resize', updateVideoVisibility);
+
+        function saveProfileChanges() {
+            const profileData = {
+                topBadge: document.getElementById('display-top-badge').innerText,
+                mainSubtitle: document.getElementById('display-main-subtitle').innerText,
+                mainBio: document.getElementById('display-main-bio').innerText,
+                labelLine1: document.getElementById('label-line-1').innerText,
+                expLine1: document.getElementById('exp-line-1').innerText,
+                labelLine2: document.getElementById('label-line-2').innerText,
+                expLine2: document.getElementById('exp-line-2').innerText,
+                labelLine3: document.getElementById('label-line-3').innerText,
+                expLine3: document.getElementById('exp-line-3').innerText,
+                cardBadge1: document.getElementById('display-card-badge1').innerHTML,
+                cardBadge2: document.getElementById('display-card-badge2').innerText,
+                cardName: document.getElementById('display-card-name').innerText,
+                cardLocation: document.getElementById('display-card-location').innerText,
+                projectsTag: document.getElementById('projects-tag').innerText,
+                projectsTitle: document.getElementById('projects-main-title').innerText,
+                aboutP1: document.getElementById('display-about-p1').innerText,
+                aboutP2: document.getElementById('display-about-p2').innerText
+            };
+
+            const fontSizes = {};
+            document.querySelectorAll('.editable-field').forEach((el, idx) => {
+                if (el.style.fontSize) {
+                    fontSizes[el.id || 'field_' + idx] = el.style.fontSize;
+                }
+            });
+
+            localStorage.setItem('zahid_profile_data', JSON.stringify(profileData));
+            localStorage.setItem('zahid_font_sizes', JSON.stringify(fontSizes));
+            alert("Profile texts & font sizes updated successfully!");
+        }
+
+        function loadSavedProfile() {
+            const saved = JSON.parse(localStorage.getItem('zahid_profile_data'));
+            if (saved) {
+                if(document.getElementById('display-top-badge')) document.getElementById('display-top-badge').innerText = saved.topBadge;
+                if(document.getElementById('display-main-subtitle')) document.getElementById('display-main-subtitle').innerText = saved.mainSubtitle;
+                if(document.getElementById('display-main-bio')) document.getElementById('display-main-bio').innerText = saved.mainBio;
+                if(document.getElementById('label-line-1')) document.getElementById('label-line-1').innerText = saved.labelLine1;
+                if(document.getElementById('exp-line-1')) document.getElementById('exp-line-1').innerText = saved.expLine1;
+                if(document.getElementById('label-line-2')) document.getElementById('label-line-2').innerText = saved.labelLine2;
+                if(document.getElementById('exp-line-2')) document.getElementById('exp-line-2').innerText = saved.expLine2;
+                if(document.getElementById('label-line-3')) document.getElementById('label-line-3').innerText = saved.labelLine3;
+                if(document.getElementById('exp-line-3')) document.getElementById('exp-line-3').innerText = saved.expLine3;
+                if(document.getElementById('display-card-badge1')) document.getElementById('display-card-badge1').innerHTML = saved.cardBadge1;
+                if(document.getElementById('display-card-badge2')) document.getElementById('display-card-badge2').innerText = saved.cardBadge2;
+                if(document.getElementById('display-card-name')) document.getElementById('display-card-name').innerText = saved.cardName;
+                if(document.getElementById('display-card-location')) document.getElementById('display-card-location').innerText = saved.cardLocation;
+                if(document.getElementById('projects-tag')) document.getElementById('projects-tag').innerText = saved.projectsTag;
+                if(document.getElementById('projects-main-title')) document.getElementById('projects-main-title').innerText = saved.projectsTitle;
+                if(document.getElementById('display-about-p1')) document.getElementById('display-about-p1').innerText = saved.aboutP1;
+                if(document.getElementById('display-about-p2')) document.getElementById('display-about-p2').innerText = saved.aboutP2;
+            }
+
+            const savedFonts = JSON.parse(localStorage.getItem('zahid_font_sizes'));
+            if (savedFonts) {
+                Object.keys(savedFonts).forEach(key => {
+                    const el = document.getElementById(key);
+                    if (el) el.style.fontSize = savedFonts[key];
+                });
+            }
+            
+            const savedVis = JSON.parse(localStorage.getItem('zahid_video_visibility'));
+            if (savedVis) {
+                document.getElementById('showOnMobile').checked = savedVis.mobile;
+                document.getElementById('showOnTablet').checked = savedVis.tablet;
+                document.getElementById('showOnDesktop').checked = savedVis.desktop;
+            }
+            updateVideoVisibility();
+
+            const savedImg = localStorage.getItem('zahid_profile_img');
+            if(savedImg) {
+                document.getElementById('hero-profile-img').src = savedImg;
+            }
+        }
+
+        function handleProfileImageUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    localStorage.setItem('zahid_profile_img', e.target.result);
+                    document.getElementById('hero-profile-img').src = e.target.result;
+                    alert("Profile photo updated successfully!");
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        // Initialize Career Highlights
+        const defaultCareer = [
+            {
+                company: "Design Desk Consultancy (DHA Islamabad)",
+                role: "Draftsman & Quantity Surveyor (2024 - Present)",
+                tag: "Taj Residencia",
+                desc: "Worked alongside former Director Mr. Javid Iqbal Awan on Town Planning and Sector layout design for Taj Residencia."
+            },
+            {
+                company: "Homoud AL Aied Contracting Co. (Saudi Arabia)",
+                role: "Draftsman & Quantity Surveyor (2009 - 2020)",
+                tag: "11 Years (MOT KSA)",
+                desc: "Calculated cut & fill quantities using EWXP, designed roads/sewer networks, and prepared final BOQ sheets for Ministry of Transport approval."
+            }
+        ];
+
+        let careerData = JSON.parse(localStorage.getItem('zahid_career_highlights')) || defaultCareer;
+        
+        function renderCareerHighlights() {
+            const container = document.getElementById('career-highlights-container');
+            if (!container) return;
+            container.innerHTML = '';
+            careerData.forEach((c, idx) => {
+                const card = document.createElement('div');
+                card.className = 'glass-card p-5 rounded-xl border border-slate-800 space-y-2 relative';
+                card.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-bold text-white editable-field text-base sm:text-lg">${c.company}</h4>
+                            <p class="text-xs text-brand-gold editable-field">${c.role}</p>
+                        </div>
+                        <span class="text-xs bg-slate-900 text-slate-300 px-2.5 py-1 rounded border border-slate-800 editable-field">${c.tag}</span>
+                    </div>
+                    <p class="text-sm text-slate-300 editable-field leading-relaxed">${c.desc}</p>
+                    <div class="admin-only absolute top-3 right-4 flex gap-1">
+                        <button onclick="moveCareerItem(${idx}, -1)" class="text-slate-300 hover:text-white text-xs px-2 py-1 bg-slate-900 border border-slate-700 rounded transition-colors" title="Move Up">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </button>
+                        <button onclick="moveCareerItem(${idx}, 1)" class="text-slate-300 hover:text-white text-xs px-2 py-1 bg-slate-900 border border-slate-700 rounded transition-colors" title="Move Down">
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </button>
+                        <button onclick="editCareerItem(${idx})" class="text-brand-500 hover:text-cyan-300 text-xs px-2 py-1 bg-slate-900 border border-slate-700 rounded transition-colors" title="Edit Career Highlight">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button onclick="deleteCareer(${idx})" class="text-red-400 hover:text-red-300 text-xs px-2 py-1 bg-slate-900 border border-slate-700 rounded transition-colors" title="Delete Career Highlight">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+            attachEditableClickHandlers();
+        }
+
+        function addCareerItem() {
+            const comp = prompt("Company Name:");
+            if (!comp) return;
+            const role = prompt("Role & Duration:");
+            const tag = prompt("Tag (e.g. Taj Residencia):");
+            const desc = prompt("Description:");
+            
+            careerData.push({ company: comp, role: role || "", tag: tag || "", desc: desc || "" });
+            localStorage.setItem('zahid_career_highlights', JSON.stringify(careerData));
+            renderCareerHighlights();
+        }
+
+        function editCareerItem(idx) {
+            const c = careerData[idx];
+            const comp = prompt("Company Name Edit Karein:", c.company);
+            if (comp === null) return;
+            
+            const role = prompt("Role & Duration Edit Karein:", c.role);
+            if (role === null) return;
+            
+            const tag = prompt("Tag Edit Karein:", c.tag);
+            if (tag === null) return;
+            
+            const desc = prompt("Description Edit Karein:", c.desc);
+            if (desc === null) return;
+
+            careerData[idx] = { company: comp, role: role, tag: tag, desc: desc };
+            localStorage.setItem('zahid_career_highlights', JSON.stringify(careerData));
+            renderCareerHighlights();
+            alert("Career Highlight updated successfully!");
+        }
+
+        function moveCareerItem(idx, direction) {
+            const targetIdx = idx + direction;
+            if (targetIdx < 0 || targetIdx >= careerData.length) return;
+            const temp = careerData[idx];
+            careerData[idx] = careerData[targetIdx];
+            careerData[targetIdx] = temp;
+            localStorage.setItem('zahid_career_highlights', JSON.stringify(careerData));
+            renderCareerHighlights();
+        }
+
+        function deleteCareer(idx) {
+            if (confirm("Kya aap is career highlight ko delete karna chahte hain?")) {
+                careerData.splice(idx, 1);
+                localStorage.setItem('zahid_career_highlights', JSON.stringify(careerData));
+                renderCareerHighlights();
+            }
+        }
+
+        // Initialize on load
+        checkSecretUrlLogin();
+        renderCareerHighlights();
+        renderDashboard();
+        initVideoReel();
+    </script>
+</body>
+</html>
