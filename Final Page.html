@@ -590,20 +590,17 @@
                 <a href="mailto:zahid-meh@hotmail.com" class="px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-950 bg-brand-gold hover:bg-amber-400 rounded-lg shadow transition-all flex items-center gap-1.5">
                     <i class="fa-solid fa-envelope text-sm"></i> Email
                 </a>
-                <!-- Admin Logout Button (Appears only in Admin Mode) -->
-                <button id="adminLogoutHeaderBtn" class="admin-only px-3 py-2 text-xs font-bold uppercase tracking-wider text-red-400 bg-slate-900 border border-red-500/40 hover:bg-red-500 hover:text-white rounded-lg transition-all flex items-center gap-1.5" onclick="handleLogout()">
-                    <i class="fa-solid fa-arrow-right-from-bracket text-xs"></i> Logout Admin
+                
+                <!-- Admin Only Action Controls -->
+                <button class="px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-950 bg-brand-gold hover:bg-amber-400 rounded-lg shadow transition-all flex items-center gap-1.5 admin-only" onclick="syncAndDownloadHTML()" title="Save changes directly into HTML File">
+                    <i class="fa-solid fa-file-code text-sm"></i> Sync & Download Updated File
                 </button>
                 <button class="px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-950 bg-brand-500 hover:bg-brand-400 rounded-lg transition-all flex items-center gap-1.5 admin-only" onclick="openAddModal()">
                     <i class="fa-solid fa-plus text-xs"></i> Add Project
                 </button>
-                <button class="px-3 py-2 text-xs font-bold uppercase tracking-wider text-brand-gold bg-slate-900 border border-brand-gold/40 hover:bg-brand-gold hover:text-slate-950 rounded-lg transition-all flex items-center gap-1.5 admin-only" onclick="exportBackup()" title="Download Backup JSON">
-                    <i class="fa-solid fa-download text-xs"></i> Export Backup
+                <button id="adminLogoutHeaderBtn" class="admin-only px-3 py-2 text-xs font-bold uppercase tracking-wider text-red-400 bg-slate-900 border border-red-500/40 hover:bg-red-500 hover:text-white rounded-lg transition-all flex items-center gap-1.5" onclick="handleLogout()">
+                    <i class="fa-solid fa-arrow-right-from-bracket text-xs"></i> Logout
                 </button>
-                <button class="px-3 py-2 text-xs font-bold uppercase tracking-wider text-cyan-400 bg-slate-900 border border-cyan-500/40 hover:bg-cyan-500 hover:text-slate-950 rounded-lg transition-all flex items-center gap-1.5 admin-only" onclick="document.getElementById('importBackupInput').click()" title="Restore Backup">
-                    <i class="fa-solid fa-upload text-xs"></i> Import
-                </button>
-                <input type="file" id="importBackupInput" class="hidden" accept=".json" onchange="importBackup(event)">
             </div>
 
             <!-- Mobile Menu Trigger -->
@@ -622,6 +619,7 @@
                 <a href="https://wa.me/923135366962" target="_blank" class="flex-1 text-center py-2 bg-emerald-500 text-slate-950 font-bold rounded-lg text-xs uppercase">WhatsApp</a>
                 <a href="mailto:zahid-meh@hotmail.com" class="flex-1 text-center py-2 bg-brand-gold text-slate-950 font-bold rounded-lg text-xs uppercase">Email</a>
             </div>
+            <button onclick="syncAndDownloadHTML()" class="admin-only w-full text-center py-2 bg-amber-500 text-slate-950 font-bold rounded-lg text-xs uppercase">Sync & Download Updated File</button>
             <button onclick="handleLogout()" class="admin-only w-full text-center py-2 bg-red-900/50 text-red-300 font-bold rounded-lg text-xs uppercase border border-red-500/30">Logout Admin</button>
         </div>
     </header>
@@ -675,13 +673,13 @@
                             </div>
                         </div>
 
-                        <!-- Admin Save Changes Button for Profile -->
+                        <!-- Admin Save Changes Buttons -->
                         <div class="admin-only pt-2 flex flex-wrap gap-2">
                             <button onclick="saveProfileChanges()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg text-xs uppercase tracking-wider shadow">
                                 <i class="fa-solid fa-floppy-disk mr-1"></i> Save Profile / Text Changes
                             </button>
-                            <button onclick="exportBackup()" class="px-4 py-2 bg-brand-gold hover:bg-amber-400 text-slate-950 font-bold rounded-lg text-xs uppercase tracking-wider shadow">
-                                <i class="fa-solid fa-download mr-1"></i> Export Backup JSON
+                            <button onclick="syncAndDownloadHTML()" class="px-4 py-2 bg-brand-gold hover:bg-amber-400 text-slate-950 font-bold rounded-lg text-xs uppercase tracking-wider shadow">
+                                <i class="fa-solid fa-download mr-1"></i> Sync & Download Updated File
                             </button>
                         </div>
                     </div>
@@ -692,8 +690,8 @@
                             
                             <div class="relative glass-card rounded-2xl p-3 sm:p-4 text-center space-y-3 border border-slate-700 shadow-xl">
                                 <div class="flex items-center justify-between text-slate-400 font-mono border-b border-slate-800 pb-2">
-                                    <span id="display-card-badge1" contenteditable="false" class="editable-field"><i class="fa-solid fa-microchip text-brand-500"></i> AutoCAD / Revit / Civil 3d</span>
-                                    <span id="display-card-badge2" contenteditable="false" class="editable-field text-brand-gold"></span>
+                                    <span id="display-card-badge1" contenteditable="false" class="editable-field"><i class="fa-solid fa-microchip text-brand-500"></i> CAD / BIM SPECIALIST</span>
+                                    <span id="display-card-badge2" contenteditable="false" class="editable-field text-brand-gold">DAE CIVIL</span>
                                 </div>
 
                                 <div class="relative w-44 h-56 sm:w-48 sm:h-60 mx-auto rounded-xl overflow-hidden border border-brand-500/80 shadow-lg bg-slate-900 group">
@@ -935,11 +933,9 @@
         <p>&copy; <span id="year"></span> Zahid Mehmood</p>
     </footer>
 
-    <!-- Interactive JavaScript -->
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        let categories = JSON.parse(localStorage.getItem('my_portfolio_categories')) || [
+    <!-- EMBEDDED MASTER BACKEND DATA (STATICALLY PERSISTED IN FILE) -->
+    <script id="embedded-database">
+        window.INITIAL_CATEGORIES = [
             "Road Design", 
             "Building & Structural", 
             "Town Planning", 
@@ -947,7 +943,7 @@
             "Sewerage Network"
         ];
 
-        let projects = JSON.parse(localStorage.getItem('my_portfolio_projects')) || [
+        window.INITIAL_PROJECTS = [
             {
                 title: "Taj Residencia Town Planning Design",
                 category: "Town Planning",
@@ -961,6 +957,15 @@
                 media: [{ data: "https://placehold.co/800x500/0f172a/f59e0b?text=KSA+MoT+Roads+%2B+EWXP+Earthwork+Sheets", type: "image/jpeg", inReel: true }]
             }
         ];
+    </script>
+
+    <!-- Interactive JavaScript Engine -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Load persisted embedded data or fallback to local storage
+        let categories = JSON.parse(localStorage.getItem('my_portfolio_categories')) || window.INITIAL_CATEGORIES;
+        let projects = JSON.parse(localStorage.getItem('my_portfolio_projects')) || window.INITIAL_PROJECTS;
         
         let isAdminLoggedIn = false;
         let currentActiveMediaIndex = 0;
@@ -1003,6 +1008,42 @@
             localStorage.setItem('my_portfolio_categories', JSON.stringify(categories));
             renderDashboard();
             initVideoReel();
+        }
+
+        // Automatic HTML Code Generator & Downloader
+        function syncAndDownloadHTML() {
+            // First save any text edits
+            saveProfileChangesQuietly();
+
+            // Prepare current state
+            const currentCategories = JSON.stringify(categories, null, 12);
+            const currentProjects = JSON.stringify(projects, null, 12);
+
+            // Fetch clean clone of document HTML
+            let fullHtml = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+
+            // Strip admin active states before export
+            fullHtml = fullHtml.replace('class="text-slate-100 font-sans antialiased blueprint-bg min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-slate-950"', 'class="client-mode text-slate-100 font-sans antialiased blueprint-bg min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-slate-950"');
+            
+            // Replace embedded database tag content with current active data
+            const dbRegex = /<script id="embedded-database">[\s\S]*?<\/script>/;
+            const newDbScript = `<script id="embedded-database">
+        window.INITIAL_CATEGORIES = ${currentCategories};
+        window.INITIAL_PROJECTS = ${currentProjects};
+    <\/script>`;
+
+            fullHtml = fullHtml.replace(dbRegex, newDbScript);
+
+            // Create downloadable Blob
+            const blob = new Blob([fullHtml], { type: 'text/html' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = "index.html";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            alert("مبارک ہو! آپ کا تمام ڈیٹا (تصاویر، پروجیکٹس اور ٹیکسٹ) اب ایچ ٹی ایم ایل فائل کے اندر کامیابی سے سیو ہو چکا ہے اور نئی index.html فائل ڈاؤن لوڈ ہو گئی ہے۔ اسے گٹ ہب پر اپلوڈ کر دیں۔");
         }
 
         function renderDashboard() {
@@ -1472,51 +1513,6 @@
             }
         });
 
-        // Backup Export / Import Functions
-        function exportBackup() {
-            const backupData = {
-                profile: localStorage.getItem('zahid_profile_data'),
-                fonts: localStorage.getItem('zahid_font_sizes'),
-                visibility: localStorage.getItem('zahid_video_visibility'),
-                img: localStorage.getItem('zahid_profile_img'),
-                categories: localStorage.getItem('my_portfolio_categories'),
-                projects: localStorage.getItem('my_portfolio_projects'),
-                career: localStorage.getItem('zahid_career_highlights')
-            };
-
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(backupData, null, 2));
-            const downloadAnchor = document.createElement('a');
-            downloadAnchor.setAttribute("href", dataStr);
-            downloadAnchor.setAttribute("download", "zahid_portfolio_backup_" + new Date().toISOString().slice(0,10) + ".json");
-            document.body.appendChild(downloadAnchor);
-            downloadAnchor.click();
-            downloadAnchor.remove();
-        }
-
-        function importBackup(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const backupData = JSON.parse(e.target.result);
-                    if(backupData.profile) localStorage.setItem('zahid_profile_data', backupData.profile);
-                    if(backupData.fonts) localStorage.setItem('zahid_font_sizes', backupData.fonts);
-                    if(backupData.visibility) localStorage.setItem('zahid_video_visibility', backupData.visibility);
-                    if(backupData.img) localStorage.setItem('zahid_profile_img', backupData.img);
-                    if(backupData.categories) localStorage.setItem('my_portfolio_categories', backupData.categories);
-                    if(backupData.projects) localStorage.setItem('my_portfolio_projects', backupData.projects);
-                    if(backupData.career) localStorage.setItem('zahid_career_highlights', backupData.career);
-                    
-                    alert("Backup imported successfully! Page is reloading...");
-                    location.reload();
-                } catch(err) {
-                    alert("Invalid backup file format!");
-                }
-            };
-            reader.readAsText(file);
-        }
-
         // Dynamic Video Reel Engine
         function getReelSlides() {
             let slides = [];
@@ -1683,7 +1679,6 @@
             document.body.classList.add('client-mode');
             document.getElementById('font-toolbar').style.display = 'none';
             document.querySelectorAll('.editable-field').forEach(el => el.setAttribute('contenteditable', 'false'));
-            // Clean URL query parameter
             window.history.replaceState({}, document.title, window.location.pathname);
             alert("Logged out successfully! Switched to normal public view.");
         }
@@ -1728,7 +1723,7 @@
 
         window.addEventListener('resize', updateVideoVisibility);
 
-        function saveProfileChanges() {
+        function saveProfileChangesQuietly() {
             const profileData = {
                 topBadge: document.getElementById('display-top-badge').innerText,
                 mainSubtitle: document.getElementById('display-main-subtitle').innerText,
@@ -1758,6 +1753,10 @@
 
             localStorage.setItem('zahid_profile_data', JSON.stringify(profileData));
             localStorage.setItem('zahid_font_sizes', JSON.stringify(fontSizes));
+        }
+
+        function saveProfileChanges() {
+            saveProfileChangesQuietly();
             alert("Profile texts & font sizes updated successfully!");
         }
 
